@@ -10,10 +10,12 @@ export default function URLPicker(props){
     return(
       <div className="container">
           <div className='url_picker'>
-              <div className="url_add_input_container">
-                  <Link to={`${url}/add`} type="button" className="btn btn-secondary input_expand_button w-100">
-                      <span>URL 추가하기</span>
-                  </Link>
+              <div className="row">
+                  <div className="url_add_input_container">
+                      <Link to={`${url}/add`} type="button" className="btn btn-secondary input_expand_button w-100">
+                          <span>URL 추가하기</span>
+                      </Link>
+                  </div>
               </div>
           </div>
 
@@ -25,7 +27,7 @@ export default function URLPicker(props){
                   </blockquote>
               </div>
           </div>
-          <div className="row">
+          <div className="row my-3">
               <div className='col-12'>
                   <URLPickerList  {...props}/>
               </div>
