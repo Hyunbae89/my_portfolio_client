@@ -62,14 +62,19 @@ export class QuoteList extends React.Component{
                     <input type="text" className="float-right" placeholder="검색창" onChange={(e)=>this.changeValue(e)}/>
                 </div>
 
-                {data.length > 0 ?
-                    quoteList
-                :
-                    <div className="d-flex justify-content-center">
-                        <div className="spinner-border" role="status">
-                            <span className="sr-only">Loading...</span>
-                        </div>
-                    </div>
+                {data.length === 0 ?
+                    <blockquote className="blockquote rounded  shadow text-center py-4 quote-list">
+                        <h5>아직 아무도 글을 작성하지 않았습니다. <br/><br/>좋아하는 명언이나 인용구를 등록해주세요.
+                        </h5>
+                    </blockquote>
+
+                    :
+                    (data.length > 0 ? quoteList :
+                        <div className="d-flex justify-content-center">
+                            <div className="spinner-border" role="status">
+                                <span className="sr-only">Loading...</span>
+                            </div>
+                        </div>)
                 }
 
             </div>
