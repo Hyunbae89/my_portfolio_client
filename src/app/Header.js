@@ -45,10 +45,13 @@ export default function Header(props){
 
                               <Dropdown.Menu className="dropdown-menu-center">
                                   <Dropdown.ItemText className='text-center'>{"Hi, " + props.name}</Dropdown.ItemText>
-                                  <Dropdown.Item as={Link} to={props.url+"/edit"}>
-                                    <FontAwesomeIcon className='log-out-icon mr-3'  icon={faInfoCircle} />
-                                    <span>User Info</span>
-                                </Dropdown.Item>
+                                  {props.id ?
+                                      <Dropdown.Item as={Link} to={props.url + "/edit"}>
+                                          <FontAwesomeIcon className='log-out-icon mr-3' icon={faInfoCircle}/>
+                                          <span>User Info</span>
+                                      </Dropdown.Item> : ''
+                                  }
+
                                 <Dropdown.Item as={Link} to="/">
                                     <FontAwesomeIcon className='log-out-icon mr-3'  icon={faSignOutAlt} />
                                     <span>Sign out</span>
